@@ -16,5 +16,6 @@
       <?php endif; ?>
     </li>
   <?php endforeach; ?> 
+  <?php echo "view ok!" ?>
 </body>
 </html>

@@ -1,20 +1,7 @@
 <?php
-    require "database/Connection.php";
-    require "database/QueryBuilder.php";
-
+    $query = require "./bootstrap.php";
     
-    function fetchAllTasks($pdo){
-        $statement = $pdo->prepare('select * from todos');
-        $statement->execute();
-        return $statement->fetchAll(PDO::FETCH_CLASS, 'Task');
-    }
-
-    $pdo = Connection::make();
-    $query = new QueryBuilder($pdo);
-    $tasks = $query->selectAll('todos');
-    
-
-    // varExportColor($tasks[0]->description);
+    $tasks = $query->selectAll('todos','Task'); 
     
     require 'PDO.view.php';
  ?>

@@ -1,4 +1,6 @@
 <?php
+    //composer autoload must require this!!!
+    require 'vendor/autoload.php';
     require "core/bootstrap.php";
 
     // $router = new Router;
@@ -11,5 +13,5 @@
     // $router = Router::load('routes.php');
     // require $router->direct($uri);
 
-    require Router::load('routes.php') -> direct(Request::uri());
+    require Router::load('routes.php') -> direct(Request::uri(), Request::method());
  ?>

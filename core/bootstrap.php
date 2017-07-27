@@ -12,11 +12,21 @@
     //     Connection::make($app['config']['database'])
     // );
 
-    App::bind('config', require 'config.php');
+    use App\Core\App;
 
-    die(var_dump(App::get('config')));
+    App::bind('config', require 'config.php');
 
     App::bind('database', new QueryBuilder(
         Connection::make(App::get('config')['database'])
     ));
+
+    function view($name, $data){
+
+        extract($data);
+        //['name'=>'doge','sound'=>'wow']
+        //$name = 'doge';
+        //$sound = 'wow';
+
+        return require "app/views/{$name}.view.php";
+    }
 ?>

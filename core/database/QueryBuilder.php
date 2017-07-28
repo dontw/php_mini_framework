@@ -14,6 +14,12 @@
             return $statement->fetchAll(PDO::FETCH_CLASS);
         }
 
+        public function selectById($table,$idNum){
+            $statement = $this->pdo->prepare("SELECT * FROM ${table} WHERE id = ${idNum}");
+            $statement->execute();
+            return $statement->fetch();
+        }
+
         public function insertItem($table,$parameters){
             
             $sql = sprintf(

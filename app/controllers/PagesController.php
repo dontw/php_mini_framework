@@ -9,30 +9,59 @@
             //Receive the request
 
             //Delegate
-
+            $articles = App::get('database')->selectAll('articles');
             //Return a response
-            $tasks = App::get('database')->selectAll('todos');
+
+            // die(var_dump($articles));
+            
             return view('index',[
-                'tasks' => $tasks
+                'articles' => $articles
             ]);
         }
 
-        public function about(){
+        public function manage(){
 
-            $comName = "doge Empire";
+            $articles = App::get('database')->selectAll('articles');
 
-             return view('about',[
-                 'comName' => $comName
+             return view('manage',[
+                 'articles' => $articles
              ]);
 
         }
 
 
+        public function about(){
 
-        public function contact(){
+             return view('about',[]);
 
-             return view('contact',[]);
+        }
 
+        public function article_content(){
+
+            $idValue = $this->getSingleUriVal($_SERVER['REQUEST_URI'], 'id');
+
+            $articleItems = App::get('database')->selectById('articles',$idValue);
+            
+             return view('article_content',[
+                 "articleItems" => $articleItems
+             ]);
+
+        }
+
+        public function article_create(){
+
+    
+            
+             return view('article_input',[
+
+             ]);
+
+        }
+
+        public function getSingleUriVal($uri,$queryName){
+            $parts = parse_url($uri);
+            parse_str($parts['query'], $query);
+            return $query[$queryName];
         }
     }
 ?>

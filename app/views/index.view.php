@@ -1,84 +1,36 @@
 <?php require('partials/head.php') ?>
 <div class="ui container">
   <h2 class="ui header">
-    <i class="settings icon"></i>
+    <i class="newspaper icon"></i>
     <div class="content">
-      廢文管理系統
+      文章管理系統
       <div class="sub header">專收廢文</div>
     </div>
   </h2>
   <div class="ui hidden divider"></div>
 
-  <div class="ui four column doubling stackable grid container">
-    <div class="column">
-      <div class="ui card">
-        <div class="content">
-          <div class="header">Cute Dog</div>
-            <div class="meta">
-              <span>2 days ago</span>
-              <a>Animals</a>
-            </div>
-            <p>doge</p>
-          </div>
-      </div>
-    </div>
+  <div class="ui three column doubling stackable grid container">
 
-     <div class="column">
-      <div class="ui card">
-        <div class="content">
-          <div class="header">Cute Dog</div>
-            <div class="meta">
-              <span>2 days ago</span>
-              <a>Animals</a>
+    <?php foreach ($articles as $article) : ?>
+      <div class="column">
+        <div class="ui card">
+          <div class="card_image"
+               style="background-image: url('<?= $article->image ?>');"
+          ></div>
+          <div class="content">
+            <div class="header"><?= $article->title ?></div>
+              <div class="meta">
+                <span><?= $article->time ?></span>
+                <span>By</span><span><?= $article->author ?></span>
+              </div>
+              <a href="/article_content?id=<?= $article->id ?>">閱讀全文</a>
             </div>
-            <p>doge</p>
-          </div>
+        </div>
       </div>
-    </div>
+    <?php endforeach; ?> 
 
-     <div class="column">
-      <div class="ui card">
-        <div class="content">
-          <div class="header">Cute Dog</div>
-            <div class="meta">
-              <span>2 days ago</span>
-              <a>Animals</a>
-            </div>
-            <p>doge</p>
-          </div>
-      </div>
-    </div>
-
-     <div class="column">
-      <div class="ui card">
-        <div class="content">
-          <div class="header">Cute Dog</div>
-            <div class="meta">
-              <span>2 days ago</span>
-              <a>Animals</a>
-            </div>
-            <p>doge</p>
-          </div>
-      </div>
-    </div>
   </div>
-  
-   <!-- <?php foreach ($tasks as $task) : ?>
-    <li>
-      <?php if($task->completed) : ?>
-        <strike><?= $task->description ?></strike>
-      <?php else: ?>
-        <?= $task->description ?>
-      <?php endif; ?>
-    </li>
-  <?php endforeach; ?> 
-  <?php echo "view ok!" ?>
 
-  <h1>Submit Your Name</h1>
-  <form method="POST" action="/name">
-    <input type="text" name="name">
-    <button type="submit">submit</button>
-  </form> -->
 </div>
 
   

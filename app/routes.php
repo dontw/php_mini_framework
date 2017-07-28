@@ -13,8 +13,10 @@
         
 //     ]);
     $router->get('', 'PagesController@home');
-    $router->get('about', 'PagesController@about');
+    $router->get('manage', 'PagesController@manage');
     // $router->get('about/culture', 'controllers/about-culture.php');
-    $router->get('contact', 'PagesController@contact');
+    $router->get('about', 'PagesController@about');
+    $router->get('article_content', 'PagesController@article_content');
+    $router->get('article_create', 'PagesController@article_create');
     $router->post('name', 'UsersController@store');
 ?>

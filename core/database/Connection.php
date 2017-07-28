@@ -3,7 +3,7 @@
         public static function make($config){
             try{
                 return  new PDO(
-                    $config['connection'].";dbname=".$config['name'],
+                    $config['connection'].";dbname=".$config['name'].";charset=utf8",
                     $config['username'],
                     $config['password'],
                     $config['options']

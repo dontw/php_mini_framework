@@ -17,7 +17,6 @@ class ComposerStaticInit9a5a91397b5d27874461c5cb8c09b12d
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInit9a5a91397b5d27874461c5cb8c09b12d' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Connection' => __DIR__ . '/../..' . '/core/database/Connection.php',
-        'Post' => __DIR__ . '/../..' . '/phparray/index.php',
         'QueryBuilder' => __DIR__ . '/../..' . '/core/database/QueryBuilder.php',
         'Task' => __DIR__ . '/../..' . '/Task.php',
     );

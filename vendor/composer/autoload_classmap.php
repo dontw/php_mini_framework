@@ -16,7 +16,6 @@ return array(
     'Composer\\Autoload\\ClassLoader' => $vendorDir . '/composer/ClassLoader.php',
     'Composer\\Autoload\\ComposerStaticInit9a5a91397b5d27874461c5cb8c09b12d' => $vendorDir . '/composer/autoload_static.php',
     'Connection' => $baseDir . '/core/database/Connection.php',
-    'Post' => $baseDir . '/phparray/index.php',
     'QueryBuilder' => $baseDir . '/core/database/QueryBuilder.php',
     'Task' => $baseDir . '/Task.php',
 );

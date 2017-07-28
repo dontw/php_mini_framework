@@ -1,6 +1,5 @@
 <?php
     namespace App\Core;
-    
     class Router{
 
         public $routes = [
@@ -46,8 +45,11 @@
                 );
 
             }
+            //global class add "\"
+            
+            // throw new \Exception('No route defined for ths URI!!!');
 
-            throw new Exception('No route defined for ths URI!!!');
+            return view('404',[]);
         }
 
         protected function callAction($controller,$action){
@@ -62,7 +64,7 @@
             
             
             if(!method_exists($controller, $action)){
-                throw new Exception(
+                throw new \Exception(
                     "{$controller} does not respond to the {$action} action."
                 );
             }

@@ -1,14 +1,14 @@
 <div class="ui menu">
   <div class="header item">
-    測試管理頁面
+    文章管理系統
   </div>
   <a class="item" href="/">
-    首頁
+    瀏覽文章
+  </a>
+  <a class="item" href="/manage">
+    管理文章
   </a>
   <a class="item" href="/about">
-    關於我們
-  </a>
-  <a class="item" href="/contact">
-    聯絡我們
+    使用工具
   </a>
 </div>

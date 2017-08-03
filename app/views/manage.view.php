@@ -36,7 +36,7 @@
                         <?= $article->time ?>
                     </td>
                     <td>
-                        doge
+                        <?= $article->author ?>
                     </td>
                     <td class="center aligned">
                         <a href="/article_change?id=<?= $article->id ?>" class="ui yellow button">

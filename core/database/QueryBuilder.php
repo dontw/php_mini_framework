@@ -20,16 +20,38 @@
             return $statement->fetch();
         }
 
+        public function updateById($table,$parameters, $idNum){
+
+            $setArr = [];
+
+            foreach($parameters as $key => $value){
+                array_push($setArr,"{$key}=:{$key}");
+            }
+
+            $sql = sprintf(
+                'UPDATE %s SET %s WHERE id = %s',
+                $table,
+                implode(', ', $setArr),
+                $idNum
+            );
+
+            try{
+                $statement = $this->pdo->prepare($sql);
+                $statement->execute($parameters);
+
+            } catch(Exception $e){
+                die($e->getMessage());
+            }
+        }
+
         public function insertItem($table,$parameters){
-            
+           
             $sql = sprintf(
                 'INSERT INTO %s (%s) VALUES(%s)',
                 $table,
                 implode(', ', array_keys($parameters)),
                 ':'.implode(', :', array_keys($parameters))
             );
-
-            
             
             try{
                 $statement = $this->pdo->prepare($sql);
@@ -39,10 +61,18 @@
             } catch(Exception $e){
                 var_dump($parameters);
                 var_dump($sql);
-                // die("OOOPS");
                 die($e->getMessage());
             }
             
+        }
+
+        public function deleteItem($table, $idNum){
+            $statement = $this->pdo->prepare("DELETE FROM ${table} WHERE id = ${idNum}");
+            try{
+                $statement->execute($parameters);
+            }catch(Exception $e){
+                die($e->getMessage());
+            }
         }
         
     } 

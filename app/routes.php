@@ -1,12 +1,14 @@
 <?php 
+    //pages
     $router->get('', 'PagesController@home');
     $router->get('manage', 'PagesController@manage');
     $router->get('about', 'PagesController@about');
-    $router->get('article_content', 'PagesController@article_content');
-    $router->get('article_create', 'PagesController@article_create');
-    $router->get('article_change', 'PagesController@article_change');
-    $router->get('article_delete', 'PagesController@article_delete');
-    $router->post('article_send','PagesController@article_send');
-    $router->post('article_update','PagesController@article_update');
-    $router->post('name', 'UsersController@store');
+
+    //articles
+    $router->get('article_content', 'ArticlesController@article_content');
+    $router->get('article_create', 'ArticlesController@article_create');
+    $router->get('article_change', 'ArticlesController@article_change');
+    $router->get('article_delete', 'ArticlesController@article_delete');
+    $router->post('article_send','ArticlesController@article_send');
+    $router->post('article_update','ArticlesController@article_update');
 ?>

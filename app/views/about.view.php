@@ -16,7 +16,7 @@
             <i class="white server icon"></i>
             環境架設 - MAMP:Apache & MySQL & PHP
         </a>
-        <a href="https://github.com/dontw/php_learning" class="ui green button" target="_blank">
+        <a href="https://github.com/dontw/php_mini_framework" class="ui green button" target="_blank">
             <i class="white github icon"></i>
             程式碼放這!
         </a>
